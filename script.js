@@ -17,6 +17,7 @@ async function findDOB() {
     try {
         const response = await fetch(API_URL, {
             method: "POST",
+            mode: "cors",          // ✅ THIS IS THE KEY FIX
             body: JSON.stringify({
                 name: name,
                 password: password
@@ -40,8 +41,8 @@ async function findDOB() {
         }
 
     } catch (err) {
+        console.error("Fetch error:", err);
         result.innerHTML = "Server error. Try again.";
         result.style.color = "red";
-        console.error(err);
     }
 }

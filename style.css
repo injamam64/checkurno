@@ -1,37 +1,120 @@
 body {
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    margin: 0;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Main card */
 .container {
-    width: 350px;
-    margin: 100px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading */
+.container h2 {
     text-align: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    color: #4a3aff;
+    margin-bottom: 18px;
+    font-size: 22px;
 }
 
+/* Input box */
 input {
-    width: 90%;
-    padding: 8px;
-    margin: 10px 0;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 2px solid #dcdcdc;
+    outline: none;
 }
 
+input:focus {
+    border-color: #4a3aff;
+}
+
+/* Button */
 button {
-    padding: 8px 15px;
-    background: #007bff;
+    margin-top: 12px;
+    padding: 12px;
+    width: 100%;
+    background: #4a3aff;
     color: white;
     border: none;
+    border-radius: 6px;
+    font-size: 16px;
     cursor: pointer;
 }
 
 button:hover {
-    background: #0056b3;
+    background: #372bdc;
 }
 
+/* Suggestions list */
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 8px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    max-height: 180px;
+    overflow-y: auto;
+}
+
+/* Suggestion item */
+ul li {
+    padding: 12px;
+    background: #f7f7ff;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+ul li:nth-child(even) {
+    background: #eef0ff;
+}
+
+ul li:hover {
+    background: #4a3aff;
+    color: white;
+}
+
+/* Result box */
 #result {
-    margin-top: 15px;
+    margin-top: 18px;
+    padding: 14px;
+    border-radius: 6px;
+    background: #e7f9ed;
+    color: #1e7e34;
+    font-size: 16px;
     font-weight: bold;
+    text-align: center;
+    border: 1px solid #b7e4c7;
+}
+
+/* Login error */
+#loginError {
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* ===== SMALL SCREEN TUNING ===== */
+@media (max-width: 360px) {
+    .container h2 {
+        font-size: 20px;
+    }
+
+    input, button {
+        font-size: 15px;
+        padding: 10px;
+    }
 }
